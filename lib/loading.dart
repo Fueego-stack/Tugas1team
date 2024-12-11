@@ -1,4 +1,4 @@
-import 'package:aplikasi_pertamaku/main.dart';
+import 'package:apkteam_totoro/main.dart';
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 

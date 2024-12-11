@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_icon_snackbar/flutter_icon_snackbar.dart';
 import 'package:image_picker/image_picker.dart';
 import 'dart:io';
-
 import 'package:lottie/lottie.dart';
 
 class MangaItem {
@@ -40,14 +39,12 @@ class _MangaScreenState extends State<MangaScreen> {
         title: const Text(
           'Movie List',
           style: TextStyle(
-            fontSize: 20,
-            color: Colors.white,
+            fontSize: 24,
             fontWeight: FontWeight.bold,
           ),
         ),
         actions: [
           IconButton(
-            color: Colors.white,
             icon: const Icon(Icons.notifications_outlined),
             onPressed: () {
               IconSnackBar.show(context,
@@ -64,10 +61,13 @@ class _MangaScreenState extends State<MangaScreen> {
                   Lottie.asset('assets/book.json', width: 200, height: 200),
                   AnimatedTextKit(
                     animatedTexts: [
-                      TyperAnimatedText('Belum ada film yang ditambahkan!',
-                          textStyle: const TextStyle(
-                            fontSize: 20,
-                          ))
+                      TyperAnimatedText(
+                        'Belum ada film yang ditambahkan!',
+                        textStyle: const TextStyle(
+                          fontSize: 20,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
                     ],
                     totalRepeatCount: 1,
                   ),
@@ -121,7 +121,7 @@ class _MangaScreenState extends State<MangaScreen> {
                       );
                     },
                     child: Card(
-                      elevation: 4,
+                      elevation: 6,
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(12),
                       ),
@@ -153,7 +153,7 @@ class _MangaScreenState extends State<MangaScreen> {
                                     manga.title,
                                     style: const TextStyle(
                                       fontWeight: FontWeight.bold,
-                                      fontSize: 14,
+                                      fontSize: 16,
                                     ),
                                     maxLines: 2,
                                     overflow: TextOverflow.ellipsis,
@@ -168,7 +168,7 @@ class _MangaScreenState extends State<MangaScreen> {
                                       ),
                                       Text(
                                         ' ${manga.rating}',
-                                        style: const TextStyle(fontSize: 12),
+                                        style: const TextStyle(fontSize: 14),
                                       ),
                                     ],
                                   ),
@@ -220,7 +220,7 @@ class _MangaScreenState extends State<MangaScreen> {
                     const Text(
                       'Tambah data baru',
                       style: TextStyle(
-                        fontSize: 20,
+                        fontSize: 22,
                         fontWeight: FontWeight.bold,
                       ),
                     ),
@@ -251,7 +251,7 @@ class _MangaScreenState extends State<MangaScreen> {
                           value: ratingValue,
                           min: 0,
                           max: 5,
-                          divisions: 50, // untuk increment 0.1
+                          divisions: 50,
                           label: ratingValue.toStringAsFixed(1),
                           onChanged: (value) {
                             setModalState(() {
@@ -289,7 +289,7 @@ class _MangaScreenState extends State<MangaScreen> {
                           icon: const Icon(Icons.camera_alt),
                           label: const Text('Kamera'),
                         ),
-                        const SizedBox(width: 10), // Spasi antara dua tombol
+                        const SizedBox(width: 10),
                         ElevatedButton.icon(
                           onPressed: () async {
                             final ImagePicker picker = ImagePicker();
@@ -335,6 +335,10 @@ class _MangaScreenState extends State<MangaScreen> {
                           Navigator.pop(context);
                         }
                       },
+                      style: ElevatedButton.styleFrom(
+                        padding: const EdgeInsets.symmetric(
+                            vertical: 12, horizontal: 24),
+                      ),
                       child: const Text('Simpan'),
                     ),
                     const SizedBox(height: 16),

@@ -2,7 +2,7 @@
     <uses-permission android:name="android.permission.CAMERA" />
    <uses-permission android:name="android.permission.INTERNET"/>
     <application
-        android:label="IMDB Lite"
+        android:label="apk_teamTotoro"
         android:name="${applicationName}"
         android:icon="@mipmap/launcher_icon">
         <activity
